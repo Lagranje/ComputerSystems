@@ -17,9 +17,9 @@ namespace Kostiuchenko_LAB_1_PART_2
             string pathFileTwo = directoryWithFiles + @"\TEXTsForLab1\bpm.txt";
             string pathFileThree = directoryWithFiles + @"\TEXTsForLab1\mazafaka.txt";
 
-            string pathArchiveOne = directoryWithFiles + @"\TEXTsForLab1\rest.txt.zip"; ;
-            string pathArchiveTwo = directoryWithFiles + @"\TEXTsForLab1\bpm.txt.zip";
-            string pathArchiveThree = directoryWithFiles + @"\TEXTsForLab1\mazafaka.txt.zip";
+            string pathArchiveOne = directoryWithFiles + @"\TEXTsForLab1\rest.txt.bz2"; ;
+            string pathArchiveTwo = directoryWithFiles + @"\TEXTsForLab1\bpm.txt.bz2";
+            string pathArchiveThree = directoryWithFiles + @"\TEXTsForLab1\mazafaka.txt.bz2";
 
             string text = ReadFile(pathFileOne);
             List<char[]> listOfByte = new List<char[]>();
@@ -65,7 +65,7 @@ namespace Kostiuchenko_LAB_1_PART_2
             Console.WriteLine("_____________________________________________________________________________________________________");
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine("Archive rest.txt.zip");
+            Console.WriteLine("Archive rest.txt.bz2");
             Console.WriteLine();
             Console.WriteLine();
             EncodeToBase64(listOfByte, numberOfCase);
@@ -81,7 +81,7 @@ namespace Kostiuchenko_LAB_1_PART_2
             Console.WriteLine("_____________________________________________________________________________________________________");
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine("Archive bpm.txt.zip");
+            Console.WriteLine("Archive bpm.txt.bz2");
             Console.WriteLine();
             Console.WriteLine();
             EncodeToBase64(listOfByte, numberOfCase);
@@ -96,7 +96,7 @@ namespace Kostiuchenko_LAB_1_PART_2
             Console.WriteLine("_____________________________________________________________________________________________________");
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine("Archive mazafaka.txt.zip");
+            Console.WriteLine("Archive mazafaka.txt.bz2");
             Console.WriteLine();
             Console.WriteLine();
             EncodeToBase64(listOfByte, numberOfCase);
