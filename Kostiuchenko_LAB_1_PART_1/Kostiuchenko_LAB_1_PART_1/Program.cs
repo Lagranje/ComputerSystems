@@ -13,10 +13,10 @@ namespace Kostiuchenko_LAB_1_PART_1
             string alphabet = "АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзиіїйклмнопрстуфхцчшщьюя";
             int countOfAllLetters; //кількість літер у тексті
             double[,] array = new double[alphabet.Length / 2, 2];
-            string directoryWithFiles = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory().ToString()).ToString()).ToString()).ToString();
-            string pathFileOne = Path.Combine(directoryWithFiles, @"\TEXTsForLab1\rest.txt");
-            string pathFileTwo = Path.Combine(directoryWithFiles, @"\TEXTsForLab1\bpm.txt");
-            string pathFileThree = Path.Combine(directoryWithFiles, @"\TEXTsForLab1\mazafaka.txt");
+            string directoryWithFiles = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory().ToString()).ToString()).ToString()).ToString()).ToString();
+            string pathFileOne = directoryWithFiles + @"\TEXTsForLab1\rest.txt";
+            string pathFileTwo = directoryWithFiles + @"\TEXTsForLab1\bpm.txt";
+            string pathFileThree = directoryWithFiles + @"\TEXTsForLab1\mazafaka.txt";
 
             string text = ReadFile(pathFileOne);
             CountLetters(array, text, out countOfAllLetters, alphabet); // Масив з кількістю окремої літери та частотою її появи у тексті

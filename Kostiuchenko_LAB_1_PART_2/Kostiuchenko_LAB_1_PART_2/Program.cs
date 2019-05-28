@@ -12,13 +12,14 @@ namespace Kostiuchenko_LAB_1_PART_2
     class Program
     {
         static void Main(string[] args) {
-            string pathFileOne = @"";
-            string pathFileTwo = @"";
-            string pathFileThree = @"U:\6 sem\Комп. системи\Lab1\Terrasoft\terrasoft.txt";
+            string directoryWithFiles = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory().ToString()).ToString()).ToString()).ToString()).ToString();
+            string pathFileOne = directoryWithFiles + @"\TEXTsForLab1\rest.txt";
+            string pathFileTwo = directoryWithFiles + @"\TEXTsForLab1\bpm.txt";
+            string pathFileThree = directoryWithFiles + @"\TEXTsForLab1\mazafaka.txt";
 
-            string pathArchiveOne = @"";
-            string pathArchiveTwo = @"";
-            string pathArchiveThree = @"";
+            string pathArchiveOne = directoryWithFiles + @"\TEXTsForLab1\rest.txt.zip"; ;
+            string pathArchiveTwo = directoryWithFiles + @"\TEXTsForLab1\bpm.txt.zip";
+            string pathArchiveThree = directoryWithFiles + @"\TEXTsForLab1\mazafaka.txt.zip";
 
             string text = ReadFile(pathFileOne);
             List<char[]> listOfByte = new List<char[]>();
@@ -31,7 +32,7 @@ namespace Kostiuchenko_LAB_1_PART_2
             var plainTextBytes = Encoding.Default.GetBytes(text);
             Console.WriteLine(Convert.ToBase64String(plainTextBytes));
             Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine(numberOfCase);
 
 
             text = ReadFile(pathFileTwo);
@@ -43,7 +44,7 @@ namespace Kostiuchenko_LAB_1_PART_2
             plainTextBytes = Encoding.Default.GetBytes(text);
             Console.WriteLine(Convert.ToBase64String(plainTextBytes));
             Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine(numberOfCase);
 
 
             text = ReadFile(pathFileThree);
@@ -55,7 +56,7 @@ namespace Kostiuchenko_LAB_1_PART_2
             plainTextBytes = Encoding.Default.GetBytes(text);
             Console.WriteLine(Convert.ToBase64String(plainTextBytes));
             Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine(numberOfCase);
 
 
             byte[] list = new byte[] { };
@@ -64,14 +65,14 @@ namespace Kostiuchenko_LAB_1_PART_2
             Console.WriteLine("_____________________________________________________________________________________________________");
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine("Archive Садок вишневий.txt.bz2");
+            Console.WriteLine("Archive rest.txt.zip");
             Console.WriteLine();
             Console.WriteLine();
             EncodeToBase64(listOfByte, numberOfCase);
             Console.WriteLine("-----------------------------------------------------------------------------------------------------");
             Console.WriteLine(Convert.ToBase64String(list.ToArray()));
             Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine(numberOfCase);
 
 
             list = new byte[] { };
@@ -80,14 +81,14 @@ namespace Kostiuchenko_LAB_1_PART_2
             Console.WriteLine("_____________________________________________________________________________________________________");
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine("Archive DHCP.txt.bz2");
+            Console.WriteLine("Archive bpm.txt.zip");
             Console.WriteLine();
             Console.WriteLine();
             EncodeToBase64(listOfByte, numberOfCase);
             Console.WriteLine("-----------------------------------------------------------------------------------------------------");
             Console.WriteLine(Convert.ToBase64String(list.ToArray()));
             Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine(numberOfCase);
 
             list = new byte[] { };
             listOfByte = ReadArchive(pathArchiveThree, ref list);
@@ -95,13 +96,13 @@ namespace Kostiuchenko_LAB_1_PART_2
             Console.WriteLine("_____________________________________________________________________________________________________");
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine("Archive terrasoft.txt.bz2");
+            Console.WriteLine("Archive mazafaka.txt.zip");
             Console.WriteLine();
             Console.WriteLine();
             EncodeToBase64(listOfByte, numberOfCase);
             Console.WriteLine("-----------------------------------------------------------------------------------------------------");
             Console.WriteLine(Convert.ToBase64String(list.ToArray()));
-
+            Console.WriteLine(numberOfCase);
             Console.ReadLine();
         }
 
